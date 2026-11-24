@@ -21,7 +21,8 @@
     "build": "next build",
     "start": "node scripts/serve.cjs",
     "lint": "eslint . --max-warnings=0",
-    "test": "node --test scripts/checks/game.test.mjs"
+    "test": "node --test scripts/checks/game.test.mjs",
+    "generate:icons": "node scripts/generate-a3-icons.mjs"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "4.3.3",
@@ -29,6 +30,7 @@
     "eslint-config-next": "16.4.5",
     "postcss": "8.5.31",
     "shadcn": "4.23.0",
-    "tailwindcss": "4.3.3"
+    "tailwindcss": "4.3.3",
+    "@playwright/test": "1.64.1"
   }
 }

@@ -9,3 +9,5 @@ Vercel builds this Next.js repository through Git integration, production branch
 Delta components are installed from https://amiri.cc/r/{name}.json. Review registry updates before adoption. Theme controllers, canvas helpers and cursor behavior are consumer-owned. Hosted JetBrains Mono is loaded from Delta. Original equilateral triangle artwork is preserved.
 
 Game tests: `pnpm test`; lint: `pnpm lint`. Local checks run only when requested. Browser storage is origin-local; previous portfolio scores do not migrate.
+
+Regenerate icons with `pnpm generate:icons` after installing Chromium with `pnpm exec playwright install chromium`. This tooling loads the hosted Delta font declarations and requires network access.

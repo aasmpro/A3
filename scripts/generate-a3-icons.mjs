@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import { chromium } from "@playwright/test";
 
@@ -70,7 +70,9 @@ function artwork() {
 
 await mkdir(source, { recursive: true });
 await mkdir(destination, { recursive: true });
-const fontCss = await readFile("src/assets/styles/fonts.css", "utf8");
+const fontResponse = await fetch("https://amiri.cc/delta/assets/css/fonts.css");
+if (!fontResponse.ok) throw new Error(`Unable to load Delta fonts: ${fontResponse.status}`);
+const fontCss = await fontResponse.text();
 const browser = await chromium.launch({ headless: true });
 try {
   const svg = artwork();
